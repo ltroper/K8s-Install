@@ -11,11 +11,6 @@ ssh aen@c1-cp1
 wget https://raw.githubusercontent.com/projectcalico/calico/master/manifests/calico.yaml
 
 
-#Look inside calico.yaml and find the setting for Pod Network IP address range CALICO_IPV4POOL_CIDR, 
-#adjust if needed for your infrastructure to ensure that the Pod network IP
-#range doesn't overlap with other networks in our infrastructure.
-vi calico.yaml
-
 
 #You can now just use kubeadm init to bootstrap the cluster
 sudo kubeadm init
