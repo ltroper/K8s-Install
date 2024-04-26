@@ -1,25 +1,17 @@
 #Setup 
-#   1. 4 VMs Ubuntu 22.04, 1 control plane, 3 nodes.
+#   1. 4 VMs Ubuntu 22.04, 1 control plane, 3 nodes.You can use just 2 machines: 1CP and 1 worker
 #   2. Static IPs on individual VMs
 #   3. /etc/hosts hosts file includes name to IP mappings for VMs
 #   4. Swap is disabled
 #   5. Take snapshots prior to installation, this way you can install 
 #       and revert to snapshot if needed 
 #
-ssh aen@c1-cp1
 
 
 #0 - Disable swap, swapoff then edit your fstab removing any entry for swap partitions
 #You can recover the space with fdisk. You may want to reboot to ensure your config is ok. 
 sudo swapoff -a
 vi /etc/fstab
-
-
-###IMPORTANT####
-#I expect this code to change a bit to make the installation process more streamlined.
-#Overall, the end result will stay the same...you'll have continerd installed
-#I will keep the code in the course downloads up to date with the latest method.
-################
 
 
 #0 - Install Packages 
@@ -113,11 +105,6 @@ sudo apt-get install -y kubelet kubeadm kubectl
 
 
 sudo apt-mark hold kubelet kubeadm kubectl containerd
-
-
-#To install the latest, omit the version parameters. I have tested all demos with the version above, if you use the latest it may impact other demos in this course and upcoming courses in the series
-#sudo apt-get install kubelet kubeadm kubectl
-#sudo apt-mark hold kubelet kubeadm kubectl containerd
 
 
 #1 - systemd Units
