@@ -58,6 +58,7 @@ sudo containerd config default | sudo tee /etc/containerd/config.toml
 # https://github.com/containerd/containerd/blob/master/docs/ops.md
 
 #At the end of this section, change SystemdCgroup = false to SystemdCgroup = true
+#Just run line 68
         [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
         ...
           [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
