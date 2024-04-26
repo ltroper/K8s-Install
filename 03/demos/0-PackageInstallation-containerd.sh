@@ -8,10 +8,9 @@
 #
 
 
-#0 - Disable swap, swapoff then edit your fstab removing any entry for swap partitions
-#You can recover the space with fdisk. You may want to reboot to ensure your config is ok. 
+#0 - Disable swap
 sudo swapoff -a
-vi /etc/fstab
+
 
 
 #0 - Install Packages 
